@@ -1,5 +1,6 @@
 import { config } from './config'
 import axios from 'axios'
+import { mockAxios } from '../mocks/axios'
 
 class Api {
 
@@ -9,6 +10,9 @@ class Api {
       responseType: 'json'
     })
 
+    if (process.env.REACT_APP_USE_MOCKS === 'true') {
+      mockAxios(this.client)
+    }
   }
 
   getAxiosClient() {
