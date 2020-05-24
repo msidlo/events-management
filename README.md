@@ -1,68 +1,119 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Assignment
+Write a simple single-page app for event administration in vanilla Javascript (but also feel free to use any JS framework you see fit, if it helps you).
+The app should have a list of upcoming and past events and a form for creating a new event.
+When user selects an event on the list, details of the event should appear somewhere.
 
-## Available Scripts
 
-In the project directory, you can run:
+The point of this is to demonstrate your programming habits and show styling (CSS) skills.
 
-### `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Moreover, if you decide to use a framework or library (or not to use any), please give a brief explanation why.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+------
 
-### `yarn test`
+### Technologies to consider
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### [React]
+**Advantages**:
+- virtual DOM
+- SSR server side rendering
+- Usage among developers 31.3% [source]
+- library (gives flexibility)
+- possibility of using Flow, TypeScript
+- component oriented structure
+- testability
+- possibility to plug only on parts of existing project
+- open source backed by Facebook
+- strong community
 
-### `yarn build`
+**Disadvanatges**:
+- many libraries, no fixed standard
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### [Angular]
+**Advantages**:
+- virtual DOM
+- SSR server side rendering
+- Usage among developers 30.7% [source]
+- component oriented structure
+- testability
+- TypeScript out of box
+- dependency injections, annotations
+- suitable for bigger project
+- convetions
+- Open source backed by Google
+- strong community
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+**Disadvanatges**:
+- more robust
+- less flexibility
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### [Vue]
+**Advantages**:
+- open source (backed by multiple companies and developers)
+- possibility to plug only on parts of existing project
+- reusable components
+- testability
+- virtual DOM
 
-### `yarn eject`
+**Disadvanatges**:
+- small usage 15.2% [source]
+- lack of support
+- less plugins
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### [jQuery]
+**Advantages**:
+- Usage among developers 48.7% [source]
+- easy import
+- small library
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Disadvanatges**:
+- speed due to direct interactions with DOM
+- less suitable for more complex systems
+- small library
+- less plugins
+- no components
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### Conclusion
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+From a basic review of multiple Js frameworks available, my choice for this assignment is ReactJs.
+In my opinion, for this project it gives the best of what I need.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### List of libraries
+- Tests - [Jest]
+- Static type check - [flow] (some things need to be said)
+- State handling - [redux], [redux-persist], [Ducks] (because it's clean and clear)
+- Network communication - [axios], [axios-middleware], [axios-mocks]
+- Basic view components - [material-ui], [material-icons] (for a project like this, it makes UX awesome and we don't reinvent the wheel)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Future work
+- Implement SSR
+- Quality of code metrics: test/documentation coverage
+- Possibly when dealing with huge data, New Relic to analyse bottlenecks
 
-### Code Splitting
+### TODO list
+- :pencil: init the project libraries
+- :x: mocks for API
+- :x: basic structer for routes
+- :x: basic view for list of (upcoming/past) events
+- :x: write tests for view
+- :x: detail of an event
+- :x: adding new event
+- :x: style the app
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+[source]: https://insights.stackoverflow.com/survey/2019#technology-_-web-frameworks
+[React]: https://reactjs.org/
+[Angular]: https://angular.io/
+[Vue]: https://vuejs.org/
+[jQuery]: https://jquery.com/
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[Jest]: https://jestjs.io/
+[flow]: https://github.com/facebook/flow
+[redux]: https://github.com/reduxjs/redux
+[redux-persist]: https://github.com/rt2zz/redux-persist
+[axios]: https://github.com/axios/axios
+[axios-middleware]: https://github.com/svrcekmichal/redux-axios-middleware
+[axios-mocks]: https://github.com/ctimmerm/axios-mock-adapter
+[material-ui]: https://github.com/mui-org/material-ui
+[material-icons]: https://github.com/mui-org/material-ui/tree/master/packages/material-ui-icons
+[Ducks]: https://github.com/erikras/ducks-modular-redux
