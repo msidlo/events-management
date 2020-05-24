@@ -92,8 +92,8 @@ In my opinion, for this project it gives the best of what I need.
 - Possibly when dealing with huge data, New Relic to analyse bottlenecks
 
 ### TODO list
-- :pencil: init the project libraries
-- :x: mocks for API
+- :white_check_mark: init the project libraries
+- :pencil: mocks for API
 - :x: basic structer for routes
 - :x: basic view for list of (upcoming/past) events
 - :x: write tests for view

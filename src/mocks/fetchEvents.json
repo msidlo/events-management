@@ -1,0 +1,12 @@
+{
+  "events": [
+    {
+      "id": 332,
+      "name": "Event name",
+      "participants": [ "d" ],
+      "startTime": "",
+      "endTime": "",
+      "note": ""
+    }
+  ]
+}
