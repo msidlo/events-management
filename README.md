@@ -94,12 +94,12 @@ In my opinion, for this project it gives the best of what I need.
 ### TODO list
 - :white_check_mark: init the project libraries
 - :pencil: mocks for API
-- :x: basic structer for routes
-- :x: basic view for list of (upcoming/past) events
+- :pencil: basic structer for routes
+- :pencil: basic view for list of (upcoming/past) events
 - :x: write tests for view
 - :x: detail of an event
-- :x: adding new event
-- :x: style the app
+- :pencil: adding new event
+- :pencil: style the app
 
 [source]: https://insights.stackoverflow.com/survey/2019#technology-_-web-frameworks
 [React]: https://reactjs.org/
