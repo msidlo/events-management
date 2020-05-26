@@ -72,7 +72,7 @@ function ListItemLink(props) {
   )
 
   return (
-    <ListItem button component={renderLink}>
+    <ListItem button component={renderLink} key={to}>
       <ListItemIcon>{icon}</ListItemIcon>
       <ListItemText primary={text} />
     </ListItem>
