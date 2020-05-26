@@ -62,7 +62,6 @@ export function LeftDrawer(props: any) {
 
 function ListItemLink(props) {
   const { icon, text, to } = props
-  const classes = useStyles()
 
   const renderLink = React.useMemo(
     () =>
