@@ -2,13 +2,23 @@
 
 import React from 'react'
 import { connect } from 'react-redux'
-import type { State } from '../../moduls/reducer'
+import type { Event } from '../../moduls/model'
+import type { State, EventsFilter } from '../../moduls/reducer'
+import { fetchEvents } from '../../moduls/reducer'
 
 import './events.css'
 
-type Prop = {}
+type Prop = {
+  events: Array<Event>,
+  eventsFilter: EventsFilter,
+  fetchEvents: Function,
+}
 
 class Events extends React.Component<Prop, any> {
+
+  componentDidMount() {
+    this.props.fetchEvents(this.props.eventsFilter)
+  }
 
   render() {
     return (
@@ -19,9 +29,14 @@ class Events extends React.Component<Prop, any> {
 }
 
 const stateToProps = (state: State) => {
-  return {}
+  return {
+    events: state.events,
+    eventsFilter: state.eventsFilter
+  }
 }
 
-const mapDispatchToProps = {}
+const mapDispatchToProps = {
+  fetchEvents
+}
 
 export default connect(stateToProps, mapDispatchToProps)(Events)
