@@ -1,13 +1,5 @@
 // @flow
 
-/**
-* State of the application
-*/
-export type State = {
-  events: Array<any>,
-  eventsFilter: EventsFilter
-}
-
 export type EventsFilter = {
   pagination: {
     page: number,
@@ -19,6 +11,14 @@ export type EventsFilter = {
   sort: {
     // additional set up
   }
+}
+
+/**
+* State of the application
+*/
+export type State = {
+  events: Array<any>,
+  eventsFilter: EventsFilter
 }
 
 export const initialState: State = {
@@ -47,7 +47,7 @@ export default function reducer(state: State = initialState, action: any): State
     case GET_EVENTS_SUCCESS:
       return {
         ...state,
-        events: action.payload.data.events
+        events: action.payload.data
       }
     case GET_EVENTS_FAIL:
       return {
