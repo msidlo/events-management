@@ -4,11 +4,33 @@
 * State of the application
 */
 export type State = {
-  events: Array<any>;
+  events: Array<any>,
+  eventsFilter: EventsFilter
+}
+
+export type EventsFilter = {
+  pagination: {
+    page: number,
+    size: number
+  },
+  filter: {
+    // additional set up
+  },
+  sort: {
+    // additional set up
+  }
 }
 
 export const initialState: State = {
-  events: []
+  events: [],
+  eventsFilter: {
+    pagination: {
+      page: 0,
+      size: 20
+    },
+    filter: {},
+    sort: {}
+  }
 }
 
 export const GET_EVENTS = 'api/GET_EVENTS'
@@ -36,14 +58,14 @@ export default function reducer(state: State = initialState, action: any): State
   }
 }
 
-export function fetchEvents(page: number, filter: string) {
+export function fetchEvents(filter: EventsFilter) {
   return {
     type: GET_EVENTS,
     payload: {
       request: {
         url: `/fetchEvents`,
-        params: {
-          page,
+        method: 'post',
+        data: {
           filter
         },
       }
