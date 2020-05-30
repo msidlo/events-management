@@ -14,5 +14,10 @@ export const LIGHT_THEME = createMuiTheme({
     fontSizeSmall : 12,
     fontSizeMedium : 14,
     fontSizeLarge : 18
+  },
+  sizes: {
+    icons: {
+      regular: '60px'
+    }
   }
 })
