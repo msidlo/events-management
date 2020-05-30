@@ -1,5 +1,5 @@
 import Dashboard from './screens/dashboard'
-import Events from './components/events/events'
+import Events from './screens/events'
 import Create from './components/create/create'
 
 export const Routes = [
