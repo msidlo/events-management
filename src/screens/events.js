@@ -6,6 +6,8 @@ import type { State, EventsFilter } from '../moduls/reducer'
 import { fetchEvents } from '../moduls/reducer'
 
 import Typography from '@material-ui/core/Typography'
+import EventsToolbar from '../components/eventsToolbar/eventsToolbar'
+import EventsList from '../components/eventsList/eventsList'
 
 import { withStyles } from '@material-ui/core/styles'
 
@@ -42,6 +44,10 @@ class Events extends React.Component<Prop, any> {
     return (
       <div className={classes.root}>
         <Typography variant="h5">List of events</Typography>
+        <EventsToolbar />
+        <div className={classes.boxHeight}>
+          <EventsList class={classes.boxHeight} currentTime={new Date().getTime()} />
+        </div>
       </div>
     )
   }
