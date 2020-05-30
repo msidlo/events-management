@@ -1,4 +1,5 @@
 // @flow
+import { config } from './config'
 
 export type EventsFilter = {
   pagination: {
@@ -83,7 +84,7 @@ export function fetchEvents(filter: EventsFilter) {
     type: GET_EVENTS,
     payload: {
       request: {
-        url: `/fetchEvents`,
+        url: config.api.apiUrls.fetchEvents,
         method: 'post',
         data: {
           filter
@@ -98,7 +99,7 @@ export function createEvent(event: Event) {
     type: CREATE_EVENT,
     payload: {
       request: {
-        url: `/createEvent`,
+        url: config.api.apiUrls.createEvent,
         method: 'post',
         data: {
           event
