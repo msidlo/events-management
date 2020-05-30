@@ -11,7 +11,7 @@ import { TextField } from 'formik-material-ui'
 import { DateTimePicker } from 'formik-material-ui-pickers'
 import Button from '@material-ui/core/Button'
 import { MuiPickersUtilsProvider } from '@material-ui/pickers'
-import DateFnsUtils from '@date-io/date-fns';
+import DateFnsUtils from '@date-io/date-fns'
 import { EventValidationSchema } from '../../moduls/validation'
 
 import { withStyles } from '@material-ui/core/styles'
