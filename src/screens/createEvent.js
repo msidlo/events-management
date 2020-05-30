@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { connect } from 'react-redux'
-import type { Event } from '../moduls/model'
 import type { State } from '../moduls/reducer'
 import { createEvent } from '../moduls/reducer'
 
