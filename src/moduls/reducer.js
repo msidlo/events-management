@@ -37,6 +37,10 @@ export const GET_EVENTS = 'api/GET_EVENTS'
 export const GET_EVENTS_SUCCESS = 'api/GET_EVENTS_SUCCESS'
 export const GET_EVENTS_FAIL = 'api/GET_EVENTS_FAIL'
 
+export const CREATE_EVENT = 'api/CREATE_EVENT'
+export const CREATE_EVENT_SUCCESS = 'api/CREATE_EVENT_SUCCESS'
+export const CREATE_EVENT_FAIL = 'api/CREATE_EVENT_FAIL'
+
 export default function reducer(state: State = initialState, action: any): State {
 
   switch (action.type) {
@@ -50,6 +54,22 @@ export default function reducer(state: State = initialState, action: any): State
         events: action.payload.data
       }
     case GET_EVENTS_FAIL:
+      return {
+        ...state
+      }
+    case CREATE_EVENT:
+      return {
+        ...state
+      }
+    case CREATE_EVENT_SUCCESS:
+      return {
+        ...state,
+        events: [
+          ...state.events,
+          action.payload.data
+        ]
+      }
+    case CREATE_EVENT_FAIL:
       return {
         ...state
       }
@@ -67,6 +87,21 @@ export function fetchEvents(filter: EventsFilter) {
         method: 'post',
         data: {
           filter
+        },
+      }
+    } 
+  }
+}
+
+export function createEvent(event: Event) {
+  return {
+    type: CREATE_EVENT,
+    payload: {
+      request: {
+        url: `/createEvent`,
+        method: 'post',
+        data: {
+          event
         },
       }
     } 

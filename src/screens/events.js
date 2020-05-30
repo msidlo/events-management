@@ -4,6 +4,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import type { State, EventsFilter } from '../moduls/reducer'
 import { fetchEvents } from '../moduls/reducer'
+import type { Event } from '../moduls/model'
 
 import Typography from '@material-ui/core/Typography'
 import EventsToolbar from '../components/eventsToolbar/eventsToolbar'
@@ -18,14 +19,11 @@ const useStyles = theme => ({
   heading: {
     fontSize: theme.typography.fontSizeLarge,
     flexShrink: 0,
-  },
-  boxHeight: {
-    height: '75%',
-    overflow: 'scroll'
   }
 })
 
 type Prop = {
+  events: Array<Event>,
   eventsFilter: EventsFilter,
   classes: any,
   fetchEvents: Function,
@@ -34,9 +32,10 @@ type Prop = {
 class Events extends React.Component<Prop, any> {
 
   componentDidMount() {
-    // possibly fetch only when there is non yet
-    // additional reload on button actions (e. g. in events toolbar)
-    this.props.fetchEvents(this.props.eventsFilter)
+    if (!this.props.events.length) {
+      this.props.fetchEvents(this.props.eventsFilter)
+    }
+    // additional reload on button actions, time since last update,... (e. g. in events toolbar)
   }
 
   render() {
@@ -45,9 +44,7 @@ class Events extends React.Component<Prop, any> {
       <div className={classes.root}>
         <Typography variant="h5">List of events</Typography>
         <EventsToolbar />
-        <div className={classes.boxHeight}>
-          <EventsList class={classes.boxHeight} currentTime={new Date().getTime()} />
-        </div>
+        <EventsList currentTime={new Date().getTime()} />
       </div>
     )
   }
@@ -55,6 +52,7 @@ class Events extends React.Component<Prop, any> {
 
 const stateToProps = (state: State) => {
   return {
+    events: state.events,
     eventsFilter: state.eventsFilter
   }
 }

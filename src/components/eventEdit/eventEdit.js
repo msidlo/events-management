@@ -3,6 +3,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import type { State } from '../../moduls/reducer'
+import { createEvent } from '../../moduls/reducer'
+import type { Event } from '../../moduls/model'
 
 import { Formik, Form, Field } from 'formik'
 import { TextField } from 'formik-material-ui'
@@ -26,7 +28,8 @@ const useStyles = theme => ({
 
 type Prop = {
   event: Event,
-  classes: any
+  classes: any,
+  createEvent: Function
 }
 
 // Soon release v4 - minDateTime (currently v4.0.0-alpha.7)
@@ -42,14 +45,9 @@ class EventEdit extends React.Component<Prop, any> {
   }
 
   onSubmit(values, { setSubmitting }) {
-    console.log({
-      name: 'Submitted values',
-      value: {
-        values
-      }
-    })
     setSubmitting(false)
-    // TODO save event
+    // if it was existing event, dispatch save event (to update) instead of create
+    this.props.createEvent(values)
   }
 
   hasErrors(errors) {
@@ -57,7 +55,7 @@ class EventEdit extends React.Component<Prop, any> {
   }
 
   render() {
-    const event = this.props.event || this.getDefaultEvent()
+    const event: any = this.props.event || this.getDefaultEvent()
     const { classes } = this.props
 
     return (
@@ -66,7 +64,7 @@ class EventEdit extends React.Component<Prop, any> {
           <Formik
             initialValues={{ ...event }}
             validationSchema={EventValidationSchema}
-            onSubmit={this.onSubmit}
+            onSubmit={this.onSubmit.bind(this)}
           >
             {({ values, touched, isSubmitting, errors, submitForm }) => (
               <Form autoComplete="off">
@@ -91,6 +89,7 @@ class EventEdit extends React.Component<Prop, any> {
                   label="End of the event"
                   required />
                 <br />
+                {/* This could be more complex input with */}
                 <Field
                   component={TextField}
                   name="participants"
@@ -126,7 +125,7 @@ const stateToProps = (state: State) => {
 }
 
 const mapDispatchToProps = {
-  // method to save new event
+  createEvent
 }
 
 export default connect(stateToProps, mapDispatchToProps)(withStyles(useStyles)(EventEdit))
