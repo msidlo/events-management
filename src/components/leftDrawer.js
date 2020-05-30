@@ -12,14 +12,12 @@ import AddIcon from '@material-ui/icons/Add'
 import EventIcon from '@material-ui/icons/Event'
 import { Link } from 'react-router-dom'
 
-const drawerWidth = 310
 const useStyles = makeStyles(theme => ({
 drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
+    width: theme.sizes.drawer.width
   },
   drawerPaper: {
-    width: drawerWidth,
+    width: theme.sizes.drawer.width,
   },
   toolbar: theme.mixins.toolbar,
 }))

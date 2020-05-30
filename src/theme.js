@@ -32,6 +32,9 @@ export const LIGHT_THEME = createMuiTheme({
   sizes: {
     icons: {
       regular: '60px'
+    },
+    drawer: {
+      width: 280
     }
   }
 })
