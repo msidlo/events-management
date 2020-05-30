@@ -1,0 +1,12 @@
+{
+  "id":220,
+  "name":"Nová udalosť",
+  "participants":[
+    "Silvia",
+    "Lubo",
+    "Martin"
+  ],
+  "startTime":"2020-07-03T12:00:00.000Z",
+  "endTime":"2020-07-03T17:50:00.000Z",
+  "note":"Novo vytvorená udalosť"
+}

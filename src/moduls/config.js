@@ -3,7 +3,8 @@
 interface ApiConfig {
   apiBaseUrl: string,
   apiUrls: {
-    fetchEvents: string
+    fetchEvents: string,
+    createEvent: string
   }
 }
 
@@ -12,7 +13,8 @@ export interface Configuration {
 }
 
 let apiBaseUrl = 'https://www.cool.com/'
-let fetchEvents = 'fetchEvents'
+let fetchEvents = '/fetchEvents'
+let createEvent = '/createEvent'
 
 if(process.env.NODE_ENV !== 'production') {
     apiBaseUrl = 'https://www.dev.cool.com/'
@@ -22,7 +24,8 @@ export const config: Configuration = {
   api: {
     apiBaseUrl,
     apiUrls: {
-      fetchEvents
+      fetchEvents,
+      createEvent
     }
   },
 }
