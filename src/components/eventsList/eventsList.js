@@ -76,12 +76,13 @@ class EventsList extends React.Component<Prop, any> {
       <Box l={0}>
         <List className={classes.list} subheader={<li />}>
           {[past, current, future].map((events, i) => (
-            <li key={`event-list-section-${i}`} className={classes.listSection}>
+            <li key={`event-list-section-${i}`} data-testid={`event-list-section-${i}`} className={classes.listSection}>
               <ul>
                 <ListSubheader className={classes.ListSubheader}>{`${titles[i]}`}</ListSubheader>
                   {events.map( (e: Event) => (
                     <ExpansionPanel
-                      key={`event-${e.id}`} expanded={this.state.expandEventDetail === e.id}
+                      key={`event-${e.id}`}
+                      expanded={this.state.expandEventDetail === e.id}
                       onChange={this.toggleItem.bind(this, e)}
                       >
                       <ExpansionPanelSummary
@@ -92,7 +93,9 @@ class EventsList extends React.Component<Prop, any> {
                         <Typography className={classes.heading}>{e.name}</Typography>
                       </ExpansionPanelSummary>
                       <ExpansionPanelDetails >
-                        <EventDescription event={e} />
+                        <div data-testid="list-item">
+                          <EventDescription event={e} />
+                        </div>
                       </ExpansionPanelDetails>
                     </ExpansionPanel>
                   ))}
