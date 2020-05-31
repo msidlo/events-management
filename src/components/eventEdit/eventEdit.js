@@ -32,7 +32,9 @@ type Prop = {
   createEvent: Function
 }
 
-// Soon release v4 - minDateTime (currently v4.0.0-alpha.7)
+// DateTimePicker can't handle minimum time to pick (e.g. from 5am).
+// This feature will be included in v4 which is soon to release.
+// Release v4 - minDateTime (currently v4.0.0-alpha.7)
 // https://github.com/mui-org/material-ui-pickers/releases
 class EventEdit extends React.Component<Prop, any> {
 
@@ -40,12 +42,15 @@ class EventEdit extends React.Component<Prop, any> {
     return {
       name: '',
       startTime: new Date(),
-      endTime: null
+      endTime: new Date(),
+      participants: '',
+      note: ''
     }
   }
 
-  onSubmit(values, { setSubmitting }) {
+  onSubmit(values, { setSubmitting, resetForm }) {
     setSubmitting(false)
+    resetForm(this.getDefaultEvent())
     // if it was existing event, dispatch save event (to update) instead of create
     this.props.createEvent(values)
   }
