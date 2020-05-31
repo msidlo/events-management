@@ -1,6 +1,6 @@
 import Dashboard from './screens/dashboard'
-import Events from './components/events/events'
-import Create from './components/create/create'
+import Events from './screens/events'
+import CreateEvent from './screens/createEvent'
 
 export const Routes = [
   {
@@ -9,7 +9,7 @@ export const Routes = [
     routes: [
       {
         path: '/events-management/create',
-        component: Create,
+        component: CreateEvent,
       },
       {
         path: '/events-management/events',

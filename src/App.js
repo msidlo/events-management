@@ -40,7 +40,7 @@ function App() {
         </ThemeProvider>
       </PersistGate>
     </Provider>
-  );
+  )
 }
 
-export default App;
+export default App

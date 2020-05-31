@@ -12,14 +12,12 @@ import AddIcon from '@material-ui/icons/Add'
 import EventIcon from '@material-ui/icons/Event'
 import { Link } from 'react-router-dom'
 
-const drawerWidth = 310
 const useStyles = makeStyles(theme => ({
 drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
+    width: theme.sizes.drawer.width
   },
   drawerPaper: {
-    width: drawerWidth,
+    width: theme.sizes.drawer.width,
   },
   toolbar: theme.mixins.toolbar,
 }))
@@ -62,7 +60,6 @@ export function LeftDrawer(props: any) {
 
 function ListItemLink(props) {
   const { icon, text, to } = props
-  const classes = useStyles()
 
   const renderLink = React.useMemo(
     () =>
@@ -73,7 +70,7 @@ function ListItemLink(props) {
   )
 
   return (
-    <ListItem button component={renderLink}>
+    <ListItem button component={renderLink} key={to}>
       <ListItemIcon>{icon}</ListItemIcon>
       <ListItemText primary={text} />
     </ListItem>
