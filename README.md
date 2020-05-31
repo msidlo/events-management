@@ -110,6 +110,7 @@ In my opinion, for this project it gives the best of what I need.
 ## Final thoughts
 This little assignment serves to demonstrate some basic programming habits. There is space to include more functionality as well as tests or devops. Using Formik makes forms less verbose. There is a drawback, that it needs additional libraries to work with material-ui as well as material-ui-pickers. In this project, I used it with Yup. A library to validate inputs of the form. It serves the purpose well enough for this assignment. Although it comes with a price of compatibility with highly customized inputs. If I'm to write more complex business logic to validate a form (e.g. many interconnected inputs, validating wihting each others), I wouldn't use this 3rd party library and write the whole validation by myself.
 
+### Link to [GitHub Pages]
 
 :heavy_exclamation_mark: :heavy_exclamation_mark: :heavy_exclamation_mark: Fixed time to (31. 5. 2020, 14:00) to split events on GithubPages in the list considering the mock data :heavy_exclamation_mark: :heavy_exclamation_mark: :heavy_exclamation_mark:
 
@@ -133,3 +134,4 @@ This little assignment serves to demonstrate some basic programming habits. Ther
 [Formik]: https://github.com/jaredpalmer/formik
 [Yup]: https://github.com/jquense/yup
 [material-ui-pickers]: https://material-ui-pickers.dev/
+[GitHub Pages]: https://msidlo.github.io/events-management
