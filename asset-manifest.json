@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/events-management/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/events-management/static/js/main.8ac2503b.chunk.js",
-    "main.js.map": "/events-management/static/js/main.8ac2503b.chunk.js.map",
+    "main.js": "/events-management/static/js/main.8f87c069.chunk.js",
+    "main.js.map": "/events-management/static/js/main.8f87c069.chunk.js.map",
     "runtime-main.js": "/events-management/static/js/runtime-main.7adf6d32.js",
     "runtime-main.js.map": "/events-management/static/js/runtime-main.7adf6d32.js.map",
     "static/js/2.8c58caf5.chunk.js": "/events-management/static/js/2.8c58caf5.chunk.js",
     "static/js/2.8c58caf5.chunk.js.map": "/events-management/static/js/2.8c58caf5.chunk.js.map",
     "index.html": "/events-management/index.html",
-    "precache-manifest.2f560975add2d6f9c0c879fd5f6702b7.js": "/events-management/precache-manifest.2f560975add2d6f9c0c879fd5f6702b7.js",
+    "precache-manifest.d8c4e1737cae504520b3e79d3401752b.js": "/events-management/precache-manifest.d8c4e1737cae504520b3e79d3401752b.js",
     "service-worker.js": "/events-management/service-worker.js",
     "static/css/main.5ecd60fb.chunk.css.map": "/events-management/static/css/main.5ecd60fb.chunk.css.map",
     "static/js/2.8c58caf5.chunk.js.LICENSE.txt": "/events-management/static/js/2.8c58caf5.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.7adf6d32.js",
     "static/js/2.8c58caf5.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.8ac2503b.chunk.js"
+    "static/js/main.8f87c069.chunk.js"
   ]
 }
