@@ -44,7 +44,7 @@ class Events extends React.Component<Prop, any> {
       <div className={classes.root}>
         <Typography variant="h5">List of events</Typography>
         <EventsToolbar />
-        <EventsList currentTime={new Date().getTime()} />
+        <EventsList currentTime={new Date("2020-05-31T12:00:00.000Z").getTime()} />
       </div>
     )
   }
